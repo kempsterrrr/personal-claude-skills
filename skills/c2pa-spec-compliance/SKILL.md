@@ -17,7 +17,7 @@ Verify code or designs against the C2PA (Coalition for Content Provenance and Au
 When invoking this skill, provide:
 - **Code or design to review**: The specific files, functions, or design decisions to check
 - **Review type**: `planning` | `code-review` | `testing`
-- **Version** (optional): Target spec version (defaults to latest: 2.3)
+- **Version** (optional): Target spec version (defaults to latest)
 
 ## Output
 
@@ -28,7 +28,10 @@ Return a compliance report with:
 
 ## Process
 
-1. **Determine version**: Use provided version, or check project config (`package.json`, `Cargo.toml`, etc.) for C2PA library versions, or default to 2.3
+1. **Determine version**:
+   - Use provided version if specified
+   - Or check project config (`package.json`, `Cargo.toml`, etc.) for C2PA library versions
+   - Or discover latest by fetching `https://github.com/c2pa-org/specifications/tree/main/build/site/specifications` and finding the highest numbered folder (e.g., if folders are 1.0, 1.1, 2.0, 2.1, 2.2, 2.3, 2.4 → use 2.4)
 
 2. **Fetch relevant spec sections**: Use WebFetch to retrieve the specification:
    ```

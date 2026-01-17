@@ -1,18 +1,20 @@
 # C2PA Specification Versions Reference
 
-## Version Matrix
+## Discovering Latest Version
 
-| Version | Status | Base URL |
-|---------|--------|----------|
-| 2.3 | **Latest** | `specifications/2.3/` |
-| 2.2 | Stable | `specifications/2.2/` |
-| 2.1 | Stable | `specifications/2.1/` |
-| 2.0 | Stable | `specifications/2.0/` |
-| 1.4 | Legacy | `specifications/1.4/` |
-| 1.3 | Legacy | `specifications/1.3/` |
-| 1.2 | Legacy | `specifications/1.2/` |
-| 1.1 | Legacy | `specifications/1.1/` |
-| 1.0 | Legacy | `specifications/1.0/` |
+To find the latest version, fetch:
+```
+https://github.com/c2pa-org/specifications/tree/main/build/site/specifications
+```
+
+The highest numbered folder is the latest version (e.g., 2.4 > 2.3 > 2.2).
+
+## Known Versions
+
+| Series | Versions |
+|--------|----------|
+| 2.x | 2.0, 2.1, 2.2, 2.3, ... |
+| 1.x (Legacy) | 1.0, 1.1, 1.2, 1.3, 1.4 |
 
 ## Full URL Construction
 
@@ -67,15 +69,15 @@ Each version folder contains:
 ## Version Selection Logic
 
 ```
-1. Check project for explicit version requirement
+1. Use explicitly provided version if given
+
+2. Check project for version requirement:
    - package.json: "c2pa" or "@c2pa/*" dependency versions
    - Cargo.toml: c2pa crate version
    - requirements.txt: c2pa-python version
    - Project documentation or config
 
-2. If found, map library version to spec version
-
-3. If not found, default to latest (2.3)
+3. If not found, discover latest from GitHub (highest numbered folder)
 ```
 
 ## Major Version Differences

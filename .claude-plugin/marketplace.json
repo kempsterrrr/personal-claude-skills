@@ -1,0 +1,22 @@
+{
+  "name": "agent-skills",
+  "owner": {
+    "name": "kempsterrrr",
+    "email": ""
+  },
+  "metadata": {
+    "description": "Agent skills for specification compliance and development workflows",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "c2pa-spec-compliance",
+      "description": "Verify software compliance with C2PA (Content Provenance and Authenticity) specification during planning and code review",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/c2pa-spec-compliance"
+      ]
+    }
+  ]
+}

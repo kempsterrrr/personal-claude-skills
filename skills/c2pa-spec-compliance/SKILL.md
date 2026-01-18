@@ -3,7 +3,7 @@ name: c2pa-spec-compliance
 description: Verifies software compliance with the C2PA specification. Invoke during planning or code review to check implementations against the spec. Provide code/design context and optionally a target version.
 license: MIT
 metadata:
-  author: agent-skills
+  author: William Kempster
   version: "2.0"
   spec-source: https://github.com/c2pa-org/specifications
 ---
